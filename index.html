@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTM Live Command Center</title>
+<link rel="stylesheet" href="./app.css">
+</head>
+<body>
+<div id="app" aria-live="polite">
+  <header class="top">
+    <div class="top-row">
+      <div>
+        <h1 id="greet">Command Center</h1>
+        <p class="sub" id="sub">Loading live data…</p>
+      </div>
+      <div class="live" id="live" title="Updates automatically when the tracker changes"><span class="dot"></span><span id="liveText">Live</span></div>
+    </div>
+    <div class="seg" id="campaigns" role="tablist" aria-label="Campaign"></div>
+  </header>
+
+  <main class="grid">
+    <section class="kpis" id="kpis" aria-label="Key numbers"></section>
+
+    <section class="card span2" aria-labelledby="h-flow">
+      <div class="card-h"><h2 id="h-flow">Where everything is</h2><span class="hint">Tasks by stage</span></div>
+      <div class="flow" id="flow"></div>
+    </section>
+
+    <section class="card" aria-labelledby="h-needs">
+      <div class="card-h"><h2 id="h-needs">Needs you now</h2><span class="hint">Final approval &amp; red risk</span></div>
+      <ul class="rows" id="needs"></ul>
+    </section>
+
+    <section class="card" aria-labelledby="h-health">
+      <div class="card-h"><h2 id="h-health">Department health</h2><span class="hint">% approved or live</span></div>
+      <div id="health"></div>
+      <div class="legend">
+        <span><i class="sw solid"></i>Done</span><span><i class="sw soft"></i>In progress</span><span><i class="sw held"></i>Held outside</span>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="h-due">
+      <div class="card-h"><h2 id="h-due">Due this week</h2><span class="hint">Next 7 days &amp; overdue</span></div>
+      <ul class="rows" id="due"></ul>
+    </section>
+
+    <section class="card" aria-labelledby="h-check">
+      <div class="card-h"><h2 id="h-check">Today's check-ins</h2><span class="hint" id="ckHint">Active team</span></div>
+      <div id="checkins"></div>
+    </section>
+
+    <section class="card span2" aria-labelledby="h-hold">
+      <div class="card-h"><h2 id="h-hold">Who holds work longest</h2><span class="hint">Average days held</span></div>
+      <div id="holders"></div>
+    </section>
+  </main>
+  <p class="foot" id="foot"></p>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
